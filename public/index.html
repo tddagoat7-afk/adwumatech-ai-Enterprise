@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#05070b" />
+  <title>AdwumaTech Intelligence OS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <canvas id="neuralCanvas" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-orb" id="cursorOrb" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <section class="launch-screen" id="launchScreen" aria-label="Welcome">
+    <div class="launch-grid" aria-hidden="true"></div>
+    <div class="orbit orbit-a" aria-hidden="true"></div>
+    <div class="orbit orbit-b" aria-hidden="true"></div>
+    <div class="orbit orbit-c" aria-hidden="true"></div>
+    <div class="launch-content">
+      <div class="system-label reveal-1"><span class="status-dot"></span> ADWUMATECH INTELLIGENCE OS · V10</div>
+      <h1 class="launch-title reveal-2">Welcome to the<br><span>Intelligence Layer.</span></h1>
+      <p class="launch-copy reveal-3">Transform global information into competitive advantage.</p>
+      <div class="launch-actions reveal-4">
+        <button class="primary-btn magnetic" id="enterBtn" type="button"><span>Enter Intelligence OS</span><i>↗</i></button>
+        <div class="launch-meta"><b>8</b> live intelligence channels <span>•</span> 7/30/90-day analysis</div>
+      </div>
+    </div>
+    <div class="launch-telemetry reveal-5">
+      <div><span>Signal density</span><strong>98.4%</strong></div>
+      <div><span>Global nodes</span><strong>1,248</strong></div>
+      <div><span>Latency</span><strong>21ms</strong></div>
+    </div>
+  </section>
+
+  <div class="app-shell" id="appShell" aria-hidden="true">
+    <aside class="sidebar">
+      <a class="brand" href="#overview" aria-label="AdwumaTech home">
+        <span class="brand-mark"><i></i><i></i><i></i></span>
+        <span><strong>AdwumaTech</strong><small>Intelligence OS</small></span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav-item active" data-target="overview"><span>01</span> Executive Overview</button>
+        <button class="nav-item" data-target="intelligence"><span>02</span> Intelligence Center</button>
+        <button class="nav-item" data-target="reputation"><span>03</span> Reputation</button>
+        <button class="nav-item" data-target="evidence"><span>04</span> Evidence Explorer</button>
+        <button class="nav-item" data-target="report"><span>05</span> Executive Report</button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="live-pill"><span></span> System operational</div>
+        <small>Built for global intelligence</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">LIVE INTELLIGENCE WORKSPACE</p>
+          <h2 id="pageTitle">Executive Overview</h2>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle visual mode">◐</button>
+          <button class="icon-btn" id="exportBtn" type="button" aria-label="Export CSV">⇩</button>
+          <div class="avatar">TD</div>
+        </div>
+      </header>
+
+      <section class="search-stage panel-motion" id="overview">
+        <div class="search-heading">
+          <div>
+            <p class="eyebrow">UNIFIED ENTITY SEARCH</p>
+            <h3>Search any company, brand, institution, or organization.</h3>
+          </div>
+          <div class="market-switch"><span class="active">GLOBAL</span><span>U.S. FOCUS</span></div>
+        </div>
+        <div class="search-row">
+          <label class="search-box">
+            <span>⌕</span>
+            <input id="companyInput" autocomplete="off" placeholder="Try Apple, Nike, Morehouse College, OpenAI..." />
+            <kbd>ENTER</kbd>
+          </label>
+          <button id="searchBtn" class="primary-btn compact magnetic" type="button"><span>Run Intelligence</span><i>→</i></button>
+        </div>
+        <div class="time-filter" role="group" aria-label="Reporting period">
+          <button data-days="7" type="button">7 Days</button>
+          <button data-days="30" class="active" type="button">30 Days</button>
+          <button data-days="90" type="button">90 Days</button>
+        </div>
+      </section>
+
+      <section class="status-strip panel-motion" id="statusStrip">
+        <div><span class="pulse"></span><strong id="statusText">Ready for intelligence search</strong></div>
+        <span id="generatedAt">Awaiting query</span>
+      </section>
+
+      <section class="metric-grid" id="metricGrid">
+        <article class="metric-card panel-motion" data-tilt><span>Verified Mentions</span><strong data-value="mentions">—</strong><small>Across all live channels</small></article>
+        <article class="metric-card panel-motion" data-tilt><span>Reputation</span><strong data-value="reputation">—</strong><small>Composite score /100</small></article>
+        <article class="metric-card panel-motion" data-tilt><span>Trust Score</span><strong data-value="trust">—</strong><small>Source-weighted confidence</small></article>
+        <article class="metric-card panel-motion danger" data-tilt><span>Crisis Risk</span><strong data-value="crisisRisk">—</strong><small>Negative signal pressure</small></article>
+        <article class="metric-card panel-motion" data-tilt><span>Opportunity</span><strong data-value="opportunity">—</strong><small>Positive momentum score</small></article>
+        <article class="metric-card panel-motion" data-tilt><span>Active Sources</span><strong data-value="sources">—</strong><small>Unique publishers</small></article>
+      </section>
+
+      <section class="dashboard-grid" id="intelligence">
+        <article class="glass-card wide panel-motion">
+          <div class="card-head"><div><p class="eyebrow">MENTION VELOCITY</p><h3>Coverage over time</h3></div><span class="live-tag">LIVE</span></div>
+          <div class="chart-wrap"><canvas id="timelineChart" width="900" height="320"></canvas><div class="chart-tooltip" id="chartTooltip"></div></div>
+        </article>
+        <article class="glass-card panel-motion">
+          <div class="card-head"><div><p class="eyebrow">SENTIMENT</p><h3>Coverage balance</h3></div></div>
+          <div class="donut-wrap"><canvas id="sentimentChart" width="360" height="360"></canvas><div class="donut-center"><strong id="sentimentCenter">—</strong><span>positive</span></div></div>
+          <div class="legend"><span><i class="positive"></i>Positive <b id="positivePct">—</b></span><span><i class="neutral"></i>Neutral <b id="neutralPct">—</b></span><span><i class="negative"></i>Negative <b id="negativePct">—</b></span></div>
+        </article>
+        <article class="glass-card panel-motion" id="reputation">
+          <div class="card-head"><div><p class="eyebrow">AI INTELLIGENCE BRIEF</p><h3>Executive signal</h3></div><span class="ai-chip">AI</span></div>
+          <p class="ai-summary" id="aiSummary">Run a search to generate a grounded executive intelligence brief from verified public evidence.</p>
+          <div class="recommendations" id="recommendations"></div>
+        </article>
+        <article class="glass-card panel-motion">
+          <div class="card-head"><div><p class="eyebrow">TOPIC RADAR</p><h3>What coverage is about</h3></div></div>
+          <div class="topic-cloud" id="topicCloud"><span>Awaiting intelligence</span></div>
+        </article>
+        <article class="glass-card panel-motion">
+          <div class="card-head"><div><p class="eyebrow">SOURCE AUTHORITY</p><h3>Leading publishers</h3></div></div>
+          <div class="rank-list" id="sourceList"></div>
+        </article>
+        <article class="glass-card panel-motion">
+          <div class="card-head"><div><p class="eyebrow">PROVIDER GRID</p><h3>Collection health</h3></div></div>
+          <div class="provider-grid" id="providerGrid"></div>
+        </article>
+      </section>
+
+      <section class="evidence-section panel-motion" id="evidence">
+        <div class="section-head"><div><p class="eyebrow">EVIDENCE EXPLORER</p><h3>Every insight linked to its source.</h3></div><div class="evidence-controls"><select id="sentimentFilter"><option value="all">All sentiment</option><option value="positive">Positive</option><option value="neutral">Neutral</option><option value="negative">Negative</option></select><input id="evidenceSearch" placeholder="Filter evidence..." /></div></div>
+        <div class="evidence-list" id="evidenceList"><div class="empty-state">Search an organization to begin building an evidence trail.</div></div>
+      </section>
+
+      <section class="report-section panel-motion" id="report">
+        <div class="section-head"><div><p class="eyebrow">EXECUTIVE REPORT</p><h3>One-page decision intelligence.</h3></div><button class="outline-btn" id="printBtn" type="button">Print / Save PDF</button></div>
+        <article class="report-sheet" id="reportSheet">
+          <div class="report-brand"><span class="brand-mark"><i></i><i></i><i></i></span><div><strong>ADWUMATECH</strong><small>Executive Intelligence Report</small></div><span id="reportPeriod">30-DAY REPORT</span></div>
+          <h2 id="reportCompany">Company Intelligence Report</h2>
+          <p id="reportSummary">Run a search to create a data-grounded executive report.</p>
+          <div class="report-metrics"><div><span>Mentions</span><strong data-report="mentions">—</strong></div><div><span>Reputation</span><strong data-report="reputation">—</strong></div><div><span>Trust</span><strong data-report="trust">—</strong></div><div><span>Risk</span><strong data-report="crisisRisk">—</strong></div></div>
+          <div class="report-columns"><div><h4>Top Intelligence Themes</h4><ul id="reportTopics"><li>Awaiting data</li></ul></div><div><h4>Recommended Actions</h4><ul id="reportRecommendations"><li>Awaiting data</li></ul></div></div>
+          <footer><span>Generated by AdwumaTech Intelligence OS</span><span id="reportDate">—</span></footer>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <div class="loading-overlay" id="loadingOverlay" aria-hidden="true"><div class="loader-core"><i></i><i></i><i></i></div><h3>Building intelligence graph</h3><p id="loadingText">Connecting to global sources...</p></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
